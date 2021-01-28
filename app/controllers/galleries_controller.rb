@@ -19,4 +19,20 @@ class GalleriesController < ApplicationController
       end
     end 
   end
+
+  def edit
+    @gallery_item = Gallery.find(params[:id])
+  end
+
+  def update
+    @gallery_item = Gallery.find(params[:id])
+
+    respond_to do |format|
+      if @gallery_item.update(params.require(:gallery).permit(:title, :subtitle, :body))
+        format.html { redirect_to galleries_path, notice: 'Portfolio item was updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end  
 end
