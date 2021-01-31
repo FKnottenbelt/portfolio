@@ -1,8 +1,11 @@
 <h1>Gallery Items</h1>
 
+<%= link_to 'Create New Portfolio Item', new_gallery_path %>
+
 <% @gallery_items.each do |gallery_item| %>
   <p><%= gallery_item.title %></p>
   <p><%= gallery_item.subtitle %></p>
   <p><%= gallery_item.body %></p>
   <p><%= image_tag gallery_item.thumb_image unless gallery_item.thumb_image.nil? %></p>
+  <%= link_to 'Edit Portfolio Item', edit_gallery_path(gallery_item.id) %>
 <% end %>
