@@ -39,4 +39,13 @@ class GalleriesController < ApplicationController
   def show
     @gallery_item = Gallery.find(params[:id])
   end
+
+  def destroy
+    @gallery_item = Gallery.find(params[:id])
+    @gallery_item.destroy
+
+    respond_to do |format|
+      format.html { redirect_to galleries_path, notice: 'Portfolio item was successfully destroyed.' }
+    end
+  end
 end
