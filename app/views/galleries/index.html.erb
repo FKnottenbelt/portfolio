@@ -3,7 +3,7 @@
 <%= link_to 'Create New Portfolio Item', new_gallery_path %>
 
 <% @gallery_items.each do |gallery_item| %>
-  <p><%= link_to gallery_item.title, gallery_path(gallery_item) %></p>
+  <p><%= link_to gallery_item.title, gallery_show_path(gallery_item) %></p>
   <p><%= gallery_item.subtitle %></p>
   <p><%= gallery_item.body %></p>
   <%= image_tag gallery_item.thumb_image unless gallery_item.thumb_image.nil? %>
