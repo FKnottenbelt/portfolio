@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   resources :galleries, except: [:show]
   get 'gallery/:id', to: 'galleries#show', as: 'gallery_show'
   
-  resources :blogs
+  resources :blogs do
+    member do
+      patch :toggle_status
+    end
+  end
 end
