@@ -5,3 +5,9 @@
 <em><%= @gallery_item.subtitle %></em>
 
 <p><%= @gallery_item.body %></p>
+
+<h2>Technologies Used:</h2>
+
+<% @gallery_item.technologies.each do |technology| %>
+  <p><%= technology.name %></p>
+<% end %>
