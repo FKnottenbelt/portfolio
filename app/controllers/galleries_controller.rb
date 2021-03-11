@@ -6,10 +6,14 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery_item = Gallery.new
+    
+    # create 3 technologies for this gallery item
+    3.times { @gallery_item.technologies.build }
   end
 
   def create
-    @gallery_item = Gallery.new(params.require(:gallery).permit(:title, :subtitle, :body))
+    @gallery_item = Gallery.new(params.require(:gallery).permit(:title, :subtitle, :body, 
+       technologies_attributes: [:name]))
 
     respond_to do |format|
       if @gallery_item.save
@@ -28,7 +32,8 @@ class GalleriesController < ApplicationController
     @gallery_item = Gallery.find(params[:id])
 
     respond_to do |format|
-      if @gallery_item.update(params.require(:gallery).permit(:title, :subtitle, :body))
+      if @gallery_item.update(params.require(:gallery).permit(:title, :subtitle, :body, 
+         technologies_attributes: [:name]))
         format.html { redirect_to galleries_path, notice: 'Portfolio item was updated.' }
       else
         format.html { render :edit }
