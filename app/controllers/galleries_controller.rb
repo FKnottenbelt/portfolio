@@ -12,8 +12,7 @@ class GalleriesController < ApplicationController
   end
 
   def create
-    @gallery_item = Gallery.new(params.require(:gallery).permit(:title, :subtitle, :body, 
-       technologies_attributes: [:name]))
+    @gallery_item = Gallery.new(gallery_params)
 
     respond_to do |format|
       if @gallery_item.save
@@ -32,8 +31,7 @@ class GalleriesController < ApplicationController
     @gallery_item = Gallery.find(params[:id])
 
     respond_to do |format|
-      if @gallery_item.update(params.require(:gallery).permit(:title, :subtitle, :body, 
-         technologies_attributes: [:name]))
+      if @gallery_item.update(gallery_params)
         format.html { redirect_to galleries_path, notice: 'Portfolio item was updated.' }
       else
         format.html { render :edit }
@@ -53,4 +51,15 @@ class GalleriesController < ApplicationController
       format.html { redirect_to galleries_path, notice: 'Portfolio item was successfully destroyed.' }
     end
   end
+
+  private
+    # Only allow a list of trusted parameters through.
+    def gallery_params
+      params.require(:gallery).permit(:title, 
+                                      :subtitle, 
+                                      :body, 
+                                      technologies_attributes: [:name]
+                                      )
+    end  
 end
+
