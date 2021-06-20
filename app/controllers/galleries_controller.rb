@@ -1,5 +1,6 @@
 class GalleriesController < ApplicationController
-
+  layout "gallery"
+  
   def index
     @gallery_items = Gallery.all
   end
