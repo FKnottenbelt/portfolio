@@ -26,6 +26,7 @@ class GalleriesController < ApplicationController
 
   def edit
     @gallery_item = Gallery.find(params[:id])
+    
   end
 
   def update
