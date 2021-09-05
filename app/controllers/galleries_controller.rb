@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout "gallery"
   
   def index
@@ -25,13 +26,9 @@ class GalleriesController < ApplicationController
   end
 
   def edit
-    @gallery_item = Gallery.find(params[:id])
-    
   end
 
   def update
-    @gallery_item = Gallery.find(params[:id])
-
     respond_to do |format|
       if @gallery_item.update(gallery_params)
         format.html { redirect_to galleries_path, notice: 'Portfolio item was updated.' }
@@ -42,11 +39,9 @@ class GalleriesController < ApplicationController
   end  
 
   def show
-    @gallery_item = Gallery.find(params[:id])
   end
 
   def destroy
-    @gallery_item = Gallery.find(params[:id])
     @gallery_item.destroy
 
     respond_to do |format|
@@ -63,5 +58,9 @@ class GalleriesController < ApplicationController
                                       technologies_attributes: [:name]
                                       )
     end  
+
+    def set_portfolio_item
+      @gallery_item = Gallery.find(params[:id])
+    end
 end
 
