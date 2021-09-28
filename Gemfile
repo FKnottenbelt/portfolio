@@ -69,3 +69,6 @@ gem 'bootstrap', '~> 5.1.0'
 
 # jquery
 gem 'jquery-rails'
+
+# custom copyright gem
+gem 'fk_view_tool', git: 'git@github.com:FKnottenbelt/fk_view_tool.git', branch: 'main'

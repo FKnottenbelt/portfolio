@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: 'source-greeting')
     end    
   end
+
+  def copyright_generator
+    FkViewTool::Renderer.copyright 'F.Knottenbelt', 'All rights reserved'
+  end
 end
