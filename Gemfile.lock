@@ -1,9 +1,9 @@
 GIT
   remote: git@github.com:FKnottenbelt/fk_view_tool.git
-  revision: 34d0adf2df3c20b1d291d577c6761c15b6ac5ed0
+  revision: 00a9573151cf2d9d43e6b86f4de7351c2fd06ce9
   branch: main
   specs:
-    fk_view_tool (0.1.0)
+    fk_view_tool (0.1.2)
 
 GEM
   remote: https://rubygems.org/
