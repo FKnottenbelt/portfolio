@@ -72,3 +72,6 @@ gem 'jquery-rails'
 
 # custom copyright gem
 gem 'fk_view_tool', git: 'git@github.com:FKnottenbelt/fk_view_tool.git', branch: 'main'
+
+# authorization
+gem 'petergate', '~> 2.0', '>= 2.0.1'
