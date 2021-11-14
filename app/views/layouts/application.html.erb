@@ -19,19 +19,11 @@
     
       <%= render 'shared/application_nav' %>
 
-      <%= login_helper %>
-
       <%= yield %>
 
-      <footer class="mt-auto text-white-50">
+      <%= render 'shared/application_footer' %>
 
-        <%= copyright_generator %>
-        
-        <%= source_helper('application') %>
-        
-        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-
-      </footer>
+      <%= source_helper('application') %>
       
     </div>
 
