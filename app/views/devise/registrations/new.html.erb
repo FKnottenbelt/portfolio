@@ -19,7 +19,7 @@
             <%= f.label :name, class: "form-label" %><br />
             <%= f.text_field :name, class: "form-control" %>
           </div>
-        </div>
+        </div> <!-- end column 6 -->
         
         <div class="col-md-6">
           <div class="mb-3">
@@ -36,7 +36,7 @@
             <%= f.label :password_confirmation, class: "form-label" %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
           </div>
-        </div>
+        </div> <!-- end column 6 -->
 
         <div class="col-md-10"></div>
    
@@ -45,14 +45,14 @@
             <%= f.submit "Sign up", class: "btn btn-primary" %>
           </div>
 
-          <div class="auth-links">
+          <div class="auth-links register-text" >
             <%= render "devise/shared/links" %>
           </div>
-        </div>
+        </div> <!-- end column 2 -->
 
       </div>  <!-- row end --> 
     <% end %>
       
-  </div>
-</div>
+  </div> <!-- end card-body -->
+</div> <!-- end card -->
 
