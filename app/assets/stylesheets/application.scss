@@ -60,15 +60,31 @@ body {
  * Custom Styles
  */
 
- .card-body {
-   color: black;
-   text-align: left;
- }
+.card-body {
+ color: black;
+ text-align: left;
+}
 
- .auth-links a{
-   color: black;
- }
+.field, .action {
+  @extend .mb-3;
+}
 
- .register-text {
-   text-align: right;
- }
+.auth-links a{
+ color: black;
+ text-decoration: none;
+}
+
+.auth-links a:hover{
+ text-decoration: underline;
+}
+
+.register-text {
+ text-align: right;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+}
+

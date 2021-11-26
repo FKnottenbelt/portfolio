@@ -10,19 +10,19 @@
       <div class="row">
 
         <div class="col-md-6">
-          <div class="mb-3">
+          <div class="field">
             <%= f.label :email, class: "form-label" %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
           </div>
 
-          <div class="mb-3">
+          <div class="field">
             <%= f.label :name, class: "form-label" %><br />
             <%= f.text_field :name, class: "form-control" %>
           </div>
         </div> <!-- end column 6 -->
         
         <div class="col-md-6">
-          <div class="mb-3">
+          <div class="field">
             <%= f.label :password, class: "form-label" %>
           
             <% if @minimum_password_length %>
@@ -32,7 +32,7 @@
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>
 
-          <div class="mb-3">
+          <div class="field">
             <%= f.label :password_confirmation, class: "form-label" %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
           </div>
@@ -41,7 +41,7 @@
         <div class="col-md-10"></div>
    
         <div class="col-md-2">           
-          <div class="d-grid gap-2 mx-auto">
+          <div class="d-grid gap-2 mx-auto action">
             <%= f.submit "Sign up", class: "btn btn-primary" %>
           </div>
 
